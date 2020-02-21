@@ -35,7 +35,7 @@ export default {
     mounted() {
     if(!this.news) {
       axios.
-        get('http://localhost/API_Proj/phprest/api/news/').
+        get('http://deadpool.byethost11.com/phprest/api/news/').
         then(response => (this.info = response.data))
     }
   }

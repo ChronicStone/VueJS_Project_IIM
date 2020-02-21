@@ -5,7 +5,7 @@
     </div>
 
     <Slider style="margin-top:40px;"></Slider>
-    <!--<NavRight class="stickyPos"></NavRight>-->
+    <NavRight class="stickyPos"></NavRight>
     <div id="newsZone" style="margin-top:2%;">
       <div v-for="news in info.news" :key="news.id">
         <NewsBloc
@@ -46,7 +46,7 @@ export default {
   },
   // Composant monté, on peut maintenant utiliser une méthode d'Axios pour recup datas
   mounted() {
-    if(!this.film) {
+    if(!this.news) {
       axios.
         get('http://localhost/API_Proj/phprest/api/news/').
         then(response => (this.info = response.data))

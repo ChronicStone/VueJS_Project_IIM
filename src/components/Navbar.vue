@@ -47,6 +47,8 @@
         <ul class="open desktop">
             <li><router-link to="/">Accueil</router-link></li>
             <li><router-link to="/members">Membres du site</router-link></li>
+            <li><router-link to="/projects">Portfolio</router-link></li>
+
         </ul>
     </nav>
   </div>

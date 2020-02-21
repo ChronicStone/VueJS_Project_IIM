@@ -38,12 +38,9 @@ export default {
   },
   // Composant monté, on peut maintenant utiliser une méthode d'Axios pour recup datas
   mounted() {
-    if(!this.accounts) {
       axios.
         get('http://localhost/API_Proj/phprest/api/projects/').
-        then(response => (this.info = response.data))
-    }
-
+        then(response => (this.info = response.data)) 
   }
 }
 </script>

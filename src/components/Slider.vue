@@ -13,15 +13,14 @@
         @click="changeIndex(1);"
         :style="i"
       >
-        <p style="line-height: 280px; font-size: 5rem; text-align: center;">
-          Page{{ index + 1 }}
-        </p>
       </SliderItem>
     </Slider>	
   </div>
 </template>
 
 <script>
+
+const axios = require('axios').default;
 import { Slider, SliderItem } from "vue-easy-slider";
 
 export default {
@@ -33,7 +32,8 @@ export default {
   data() {
     return {
       list: [],
-      sliderValue: 2
+      sliderValue: 2,
+      images: []
     };
   },
   methods: {
@@ -42,26 +42,30 @@ export default {
     }
   },
   mounted() {
+    axios.
+      get('https://picsum.photos/1500/400').
+      then(response => (this.info = response.data))
+
     setTimeout(
       () =>
         (this.list = [
           {
-            backgroundColor: "#3f51b5",
+            backgroundImage: "url('https://picsum.photos/1500/400')",
             width: "100%",
             height: "100%"
           },
           {
-            backgroundColor: "#eee",
+            backgroundImage: "url('https://picsum.photos/1300/400')",
             width: "100%",
             height: "100%"
           },
           {
-            backgroundColor: "#f44336",
+            backgroundImage: "url('https://picsum.photos/1400/400')",
             width: "100%",
             height: "100%"
           },
           {
-            backgroundColor: "#eee",
+            backgroundImage: "url('https://picsum.photos/1300/500')",
             width: "100%",
             height: "100%"
           }
